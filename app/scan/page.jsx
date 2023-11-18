@@ -2,9 +2,12 @@
 import { Html5QrcodeScanner } from "html5-qrcode";
 import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function ScanPage() {
   const [scanReult, setScanReult] = useState(null);
+  const [verify, setVerify] = useState(false);
+  const router = useRouter();
   useEffect(() => {
     const scanner = new Html5QrcodeScanner("reader", {
       qrbox: {
@@ -24,10 +27,15 @@ export default function ScanPage() {
       console.warn(err);
     }
   }, []);
+  useEffect(() => {
+    if (!verify) {
+      router.push("/scan/idk");
+    }
+  }, [scanReult]);
 
   return (
     <>
-      <div className="md:w-[390px] rounded-sm bg-white ">
+      < className="md:w-[390px] rounded-sm bg-white ">
         {scanReult ? (
           <>
             <div className=" m-4">
@@ -77,7 +85,7 @@ export default function ScanPage() {
             </div>
           </>
         )}
-      </div>
+      <div></div>
     </>
   );
 }

@@ -5,6 +5,7 @@ import gps from "@/public/img/homepage/gps.png"
 import school from "@/public/img/homepage/school.png"
 import nav from "@/public/img/homepage/nav.png"
 import cal from "@/public/img/homepage/cal.png"
+import more from "@/public/img/more.png"
 export default function Qmenu() {
   return (
     <>
@@ -84,7 +85,15 @@ export default function Qmenu() {
             <a className="flex justify-center flex-col items-center">
               <div className="w-[77px] h-[77px] relative mb-2">
                 <div className="w-[77px] h-[77px] left-0 top-0 absolute  rounded-[20px] shadow" />
-                <div className="w-[68px] h-[62px] px-[8.84px] pt-[3.10px] pb-[3.72px] justify-center items-center inline-flex m-1"></div>
+                <div className="w-[68px] h-[62px] px-[8.84px] pt-[3.10px] pb-[3.72px] justify-center items-center inline-flex m-1">
+                <Image
+                className="w-12   items-center mt-1"
+                  src={more}
+                  width={200}
+                  height={200}
+                  alt="calendar"
+                />
+                </div>
               </div>
               <span className=" mb-2 transition-all duration-200 text-sm text-gray-500">
               More
