@@ -3,38 +3,114 @@ import home from "@/public/img/home.png";
 import camera from "@/public/img/Camera.png";
 import card from "@/public/img/card.png";
 import menu from "@/public/img/menu.png";
-import user from "@/public/img/user.jpg"
+import user from "@/public/img/user.jpg";
 export default function Navbar() {
   return (
     <>
-      <footer class="bg-white border-gray-200 h-14 flex justify-evenly  ">
-        <div className="flex  items-center mt-1.5 mb-1 flex-col">
-          <Image className="h-6 w-5 mb-0.5" src={home} alt="home" />
-          Home
-        </div>
-        <div className="flex flex-col items-center mt-2 mb-1">
-          <Image className="h-7 w-6" src={menu} alt="home" />
-          Menu
-        </div>
-        
-        <div className="flex flex-col items-center ml-8 mr-9">
-        <div className=" absolute  bottom-5">
+      <div className="flex items-center justify-center  w-full">
+        <div className="">
+          {/* <div className="w-full max-w-md px-7 py-10 mx-auto  shadow-xl"> */}
+          {/* Navigation Bar */}
+          <div className="px-5 pt-2 bg-white shadow-lg  pb-0 h-16">
+            <div className="flex flex-row space-x-3">
+              {/* Item #1 */}
+              <div className="flex group">
+                <a href="#" className="p-3 text-gray-400 hover:text-green-500">
+                  <span className="flex flex-col items-center">
+                    {/* Icon */}
+                    <Image src={home} alt="home" className="w-4 h-5" />
 
-          <Image className="w-16  rounded-full h-16 border-2 border-green-600" src={user} alt="home" />
+                    {/* Text */}
+                    <span className="text-xs mb-2 transition-all duration-200">
+                      Home
+                    </span>
 
+                    {/* Focus Dot */}
+                    <span className="h-2 w-2 rounded-full group-hover:bg-green-500 transition-all duration-150 delay-100"></span>
+                  </span>
+                </a>
+              </div>
+              <div class="flex group">
+                <a href="#" class="p-3 text-gray-400 hover:text-green-500">
+                  <span class="flex flex-col items-center">
+                    {/* <!-- Icon --> */}
+                    <Image src={menu} alt="home" className="w-5 h-5" />
 
-        </div>
-        </div>
+                    {/* <!-- Text --> */}
+                    <span class="text-xs mb-2 transition-all duration-200">
+                      Menu
+                    </span>
 
-        <div className="flex flex-col items-center mt-2 mb-1">
-          <Image className="h-9 w-8 " src={card} alt="home" />
-          Card
+                    {/* <!-- Focus Dot --> */}
+                    <span
+                      class="h-2 w-2 rounded-full group-hover:bg-green-500
+									transition-all duration-150 delay-100"
+                    ></span>
+                  </span>
+                </a>
+              </div>
+              <div class="flex group">
+                <a href="#" class="p-3 text-green-500 hover:text-green-500">
+                  <span class="flex flex-col items-center">
+                    {/* <!-- Icon --> */}
+
+                    <div
+                      class="w-16 h-16  rounded-full shadow-lg relative  bottom-12    bg-slate-300 "
+
+                    ></div>
+
+                    {/* <!-- Text --> */}
+                    <span class="text-xs mb-2 transition-all duration-200"></span>
+
+                    {/* <!-- Focus Dot --> */}
+
+                  </span>
+                </a>
+              </div>
+              <div class="flex group">
+                <a href="#" class="p-3 text-gray-400 hover:text-green-500">
+                  <span class="flex flex-col items-center">
+                    {/* <!-- Icon --> */}
+                    <Image className="w-6 h-5" alt="" src={card} />
+
+                    {/* <!-- Text --> */}
+                    <span class="text-xs mb-2 transition-all duration-200">
+                      Card
+                    </span>
+
+                    {/* <!-- Focus Dot --> */}
+                    <span
+                      class="h-2 w-2 rounded-full group-hover:bg-green-500
+									transition-all duration-150 delay-100"
+                    ></span>
+                  </span>
+                </a>
+              </div>
+              <div class="flex group">
+                <a href="#" class="p-3 text-gray-400 hover:text-green-500">
+                  <span class="flex flex-col items-center">
+                    {/* <!-- Icon --> */}
+                    <Image className="w-5 h-5" alt="" src={camera} />
+
+                    {/* <!-- Text --> */}
+                    <span class="text-xs mb-2 transition-all duration-200">
+                      Scan
+                    </span>
+
+                    {/* <!-- Focus Dot --> */}
+                    <span
+                      class="h-2 w-2 rounded-full group-hover:bg-green-500
+									transition-all duration-150 delay-100"
+                    ></span>
+                  </span>
+                </a>
+              </div>
+              {/* ... Other items follow similarly */}
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col items-center mt-2 mb-1">
-          <Image className="h-6 w-6" src={camera} alt="home" />
-          Scan
-        </div>
-      </footer>
+      </div>
+      {/* </div> */}
     </>
   );
 }
