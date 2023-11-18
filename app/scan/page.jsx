@@ -7,7 +7,32 @@ import { useRouter, useSearchParams } from "next/navigation";
 export default function ScanPage() {
   const [scanReult, setScanReult] = useState(null);
   const [verify, setVerify] = useState(true);
+  const [name, setName] = useState("");
+  const [carnumber,setCarnumber] = useState("");
   const router = useRouter();
+  async function getData() {
+    try {
+      const response = await fetch(
+        `https://api-c3vk.onrender.com/vincheck?input_text=${scanReult}`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log(data.name);
+      if (data.name != null) {
+        setName(data.name);
+        setCarnumber(data.carnumber);
+      } else {
+        setVerify(false);
+      }
+
+      return data;
+    } catch (error) {
+      console.error("An error occurred while fetching the data:", error);
+      return null;
+    }
+  }
   useEffect(() => {
     const scanner = new Html5QrcodeScanner("reader", {
       qrbox: {
@@ -22,6 +47,7 @@ export default function ScanPage() {
     function success(result) {
       scanner.clear();
       setScanReult(result);
+      getData();
     }
     function error(err) {
       console.warn(err);
@@ -31,40 +57,44 @@ export default function ScanPage() {
     if (!verify) {
       router.push("/scan/idk");
     }
-  }, [scanReult]);
+  }, [verify]);
 
   return (
     <>
-      <div className ="md:w-[390px] rounded-sm bg-white ">
+      <div className="md:w-[390px] rounded-sm bg-white ">
         {scanReult ? (
           <>
             <div className=" m-4">
-              <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                <div class="flex justify-end px-4 pt-4">
+              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                <div className="flex justify-end px-4 pt-4">
                   {/* <!-- Dropdown menu --> */}
                 </div>
-                <div class="flex flex-col items-center pb-10">
+                <div className="flex flex-col items-center pb-10">
                   <img
-                    class="w-24 h-24 mb-3 rounded-full shadow-lg"
+                    className="w-24 h-24 mb-3 rounded-full shadow-lg"
                     src="/docs/images/people/profile-picture-3.jpg"
-                    alt="Bonnie image"
+                    alt="image"
                   />
-                  <h5 class="mb-1 text-xl font-medium text-gray-900">
-                    นาย ตัวอย่าง
+                  <h5 className=" text-xl font-medium text-gray-900">
+                    {name}
                   </h5>
-                  <span class="text-sm text-gray-500">
+                  <span className="text-sm text-gray-500 mb-1">
+                    {carnumber}
+                  </span>
+                  <span className="text-sm text-gray-500">
                     วินมอไซต์ลงทะเบียนเเล้ว
                   </span>
-                  <div class="flex mt-4 md:mt-6">
+
+                  <div className="flex mt-4 md:mt-6">
                     <a
                       href="tel:0-2942-8222"
-                      class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                      className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300"
                     >
                       Call Sos
                     </a>
                     <a
                       href="#"
-                      class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 ms-3"
+                      className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 ms-3"
                     >
                       Report
                     </a>
@@ -86,8 +116,6 @@ export default function ScanPage() {
           </>
         )}
       </div>
-
     </>
-
   );
 }
