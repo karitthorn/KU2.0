@@ -63,10 +63,10 @@ export default function FormInfoPage() {
             </button>
           </form>
         </section>
-        <div className="fixed bottom-0 w-full">
+      </div>
+      <div className="fixed bottom-0 w-full">
           <Navbar />
         </div>
-      </div>
     </>
   );
 }

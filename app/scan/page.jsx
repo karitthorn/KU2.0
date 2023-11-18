@@ -3,6 +3,7 @@ import { Html5QrcodeScanner } from "html5-qrcode";
 import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
 import { useRouter, useSearchParams } from "next/navigation";
+import Feanav from "../components/feanav";
 
 export default function ScanPage() {
   const [scanReult, setScanReult] = useState("");
@@ -71,6 +72,7 @@ export default function ScanPage() {
       <div className="md:w-[390px] rounded-sm bg-white ">
         {scanReult ? (
           <>
+          <Feanav/>
             <div className=" m-4">
               <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                 <div className="flex justify-end px-4 pt-4">
@@ -108,11 +110,10 @@ export default function ScanPage() {
                   </div>
                 </div>
               </div>
-
-              <div className="fixed bottom-0 w-full">
+            </div>
+            <div className="fixed bottom-0 w-full">
                 <Navbar />
               </div>
-            </div>
           </>
         ) : (
           <>

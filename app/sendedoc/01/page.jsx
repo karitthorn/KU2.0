@@ -29,9 +29,7 @@ export default function ScanPage() {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               Step 1
             </h5>
-            <p className="font-normal text-gray-700">
-              กรอกเอกสาร
-            </p>
+            <p className="font-normal text-gray-700">กรอกเอกสาร</p>
             <div className=" flex justify-start mt-3">
               <Link href="/sendedoc/01/forminfo">
                 <button
@@ -63,9 +61,7 @@ export default function ScanPage() {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               Step 2
             </h5>
-            <p className="font-normal text-gray-700">
-            ส่งอีเมลไปหาอาจารย์
-            </p>
+            <p className="font-normal text-gray-700">ส่งอีเมลไปหาอาจารย์</p>
             <div className=" flex justify-start mt-3">
               <Link href="/sendedoc/01/form">
                 <button
@@ -119,9 +115,9 @@ export default function ScanPage() {
           </div>
         </section>
         <div className="h-16"></div>
-        <div className="fixed bottom-0 w-full">
-          <Navbar />
-        </div>
+      </div>
+      <div className="fixed bottom-0 w-full">
+        <Navbar />
       </div>
     </>
   );
