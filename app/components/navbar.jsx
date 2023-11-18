@@ -12,7 +12,7 @@ export default function Navbar() {
         <div className="">
           {/* <div className="w-full max-w-md px-7 py-10 mx-auto  shadow-xl"> */}
           {/* Navigation Bar */}
-          <div className="px-5 pt-2 bg-white shadow-lg  pb-0 h-16">
+          <div className="px-5 pt-2 bg-white   pb-0 h-16">
             <div className="flex flex-row space-x-3">
               {/* Item #1 */}
               <div className="flex group">
