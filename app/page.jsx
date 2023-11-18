@@ -32,11 +32,10 @@ export default function Home() {
             />
           </div>
         </section>
-        <footer className=" w-full ">
+        <div className="fixed bottom-0 w-full">
           <Navbar />
-        </footer>
+        </div>
       </div>
-
     </>
   );
 }
