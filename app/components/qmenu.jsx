@@ -50,7 +50,7 @@ export default function Qmenu() {
           </a>
           <Link
             className="flex justify-center flex-col items-center"
-            href="https://ku-nav.vercel.app"
+            href="#"
           >
             <div className="w-[77px] h-[77px] relative mb-2">
               <div className="w-[77px] h-[77px] left-0 top-0 absolute  rounded-[20px] shadow" />
