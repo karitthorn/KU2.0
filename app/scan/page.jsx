@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 export default function ScanPage() {
   const [scanReult, setScanReult] = useState(null);
-  const [verify, setVerify] = useState(false);
+  const [verify, setVerify] = useState(true);
   const router = useRouter();
   useEffect(() => {
     const scanner = new Html5QrcodeScanner("reader", {
