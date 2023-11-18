@@ -16,7 +16,10 @@ export default function Navbar() {
             <div className="flex flex-row space-x-3">
               {/* Item #1 */}
               <div className="flex group">
-                <Link href="/" className="p-3 text-gray-400 hover:text-green-500">
+                <Link
+                  href="/"
+                  className="p-3 text-gray-400 hover:text-green-500"
+                >
                   <span className="flex flex-col items-center">
                     {/* Icon */}
                     <Image src={home} alt="home" className="w-4 h-5" />
@@ -55,16 +58,12 @@ export default function Navbar() {
                   <span class="flex flex-col items-center">
                     {/* <!-- Icon --> */}
 
-                    <div
-                      class="w-16 h-16  rounded-full shadow-lg relative  bottom-12    bg-slate-300 "
-
-                    ></div>
+                    <div class="w-16 h-16  rounded-full shadow-lg relative  bottom-12    bg-slate-300 "></div>
 
                     {/* <!-- Text --> */}
                     <span class="text-xs mb-2 transition-all duration-200"></span>
 
                     {/* <!-- Focus Dot --> */}
-
                   </span>
                 </a>
               </div>
@@ -88,7 +87,10 @@ export default function Navbar() {
                 </a>
               </div>
               <div class="flex group">
-                <Link href="/scan" class="p-3 text-gray-400 hover:text-green-500">
+                <Link
+                  href="/scan"
+                  class="p-3 text-gray-400 hover:text-green-500"
+                >
                   <span class="flex flex-col items-center">
                     {/* <!-- Icon --> */}
                     <Image className="w-5 h-5" alt="" src={camera} />
