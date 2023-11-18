@@ -35,7 +35,7 @@ export default function ScanPage() {
 
   return (
     <>
-      < className="md:w-[390px] rounded-sm bg-white ">
+      <div className ="md:w-[390px] rounded-sm bg-white ">
         {scanReult ? (
           <>
             <div className=" m-4">
@@ -85,7 +85,9 @@ export default function ScanPage() {
             </div>
           </>
         )}
-      <div></div>
+      </div>
+
     </>
+
   );
 }
