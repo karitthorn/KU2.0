@@ -4,6 +4,7 @@ import camera from "@/public/img/Camera.png";
 import card from "@/public/img/card.png";
 import menu from "@/public/img/menu.png";
 import user from "@/public/img/user.jpg";
+import Link from "next/link";
 export default function Navbar() {
   return (
     <>
@@ -15,7 +16,7 @@ export default function Navbar() {
             <div className="flex flex-row space-x-3">
               {/* Item #1 */}
               <div className="flex group">
-                <a href="#" className="p-3 text-gray-400 hover:text-green-500">
+                <Link href="/" className="p-3 text-gray-400 hover:text-green-500">
                   <span className="flex flex-col items-center">
                     {/* Icon */}
                     <Image src={home} alt="home" className="w-4 h-5" />
@@ -28,7 +29,7 @@ export default function Navbar() {
                     {/* Focus Dot */}
                     <span className="h-2 w-2 rounded-full group-hover:bg-green-500 transition-all duration-150 delay-100"></span>
                   </span>
-                </a>
+                </Link>
               </div>
               <div class="flex group">
                 <a href="#" class="p-3 text-gray-400 hover:text-green-500">
@@ -87,7 +88,7 @@ export default function Navbar() {
                 </a>
               </div>
               <div class="flex group">
-                <a href="#" class="p-3 text-gray-400 hover:text-green-500">
+                <Link href="/scan" class="p-3 text-gray-400 hover:text-green-500">
                   <span class="flex flex-col items-center">
                     {/* <!-- Icon --> */}
                     <Image className="w-5 h-5" alt="" src={camera} />
@@ -103,7 +104,7 @@ export default function Navbar() {
 									transition-all duration-150 delay-100"
                     ></span>
                   </span>
-                </a>
+                </Link>
               </div>
               {/* ... Other items follow similarly */}
             </div>
