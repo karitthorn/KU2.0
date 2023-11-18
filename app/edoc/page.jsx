@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
+
 export default function Home() {
   const [succeed, setSucceed] = useState(false);
   const [url, setUrl] = useState(

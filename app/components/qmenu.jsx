@@ -6,6 +6,8 @@ import school from "@/public/img/homepage/school.png"
 import nav from "@/public/img/homepage/nav.png"
 import cal from "@/public/img/homepage/cal.png"
 import more from "@/public/img/more.png"
+import edoc from "@/public/img/homepage/edoc.png"
+import Link from "next/link";
 export default function Qmenu() {
   return (
     <>
@@ -48,7 +50,7 @@ export default function Qmenu() {
               About KU
               </span>
             </a>
-            <a className="flex justify-center flex-col items-center">
+            <Link className="flex justify-center flex-col items-center" href="https://ku-nav.vercel.app">
               <div className="w-[77px] h-[77px] relative mb-2">
                 <div className="w-[77px] h-[77px] left-0 top-0 absolute  rounded-[20px] shadow" />
                 <div className="w-[68px] h-[62px] px-[8.84px] pt-[3.10px] pb-[3.72px] justify-center items-center inline-flex m-1">
@@ -64,7 +66,7 @@ export default function Qmenu() {
               <span className=" mb-2 transition-all duration-200 text-sm text-gray-500">
               Quick link
               </span>
-            </a>
+            </Link>
             <a className="flex justify-center flex-col items-center">
               <div className="w-[77px] h-[77px] relative mb-2">
                 <div className="w-[77px] h-[77px] left-0 top-0 absolute  rounded-[20px] shadow" />
@@ -82,6 +84,23 @@ export default function Qmenu() {
               KU Event
               </span>
             </a>
+            <Link className="flex justify-center flex-col items-center" href="/sendedoc">
+              <div className="w-[77px] h-[77px] relative mb-2">
+                <div className="w-[77px] h-[77px] left-0 top-0 absolute  rounded-[20px] shadow" />
+                <div className="w-[68px] h-[62px] px-[8.84px] pt-[3.10px] pb-[3.72px] justify-center items-center inline-flex m-0.5">
+                <Image
+                className="w-12   items-center pt-2"
+                  src={edoc}
+                  width={200}
+                  height={200}
+                  alt="calendar"
+                />
+                </div>
+              </div>
+              <span className=" mb-2 transition-all duration-200 text-sm text-gray-500">
+              Edoc
+              </span>
+            </Link>
             <a className="flex justify-center flex-col items-center">
               <div className="w-[77px] h-[77px] relative mb-2">
                 <div className="w-[77px] h-[77px] left-0 top-0 absolute  rounded-[20px] shadow" />

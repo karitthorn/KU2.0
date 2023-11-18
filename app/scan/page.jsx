@@ -5,24 +5,28 @@ import Navbar from "@/app/components/navbar";
 import { useRouter, useSearchParams } from "next/navigation";
 
 export default function ScanPage() {
-  const [scanReult, setScanReult] = useState(null);
+  const [scanReult, setScanReult] = useState("");
   const [verify, setVerify] = useState(true);
   const [name, setName] = useState("");
   const [carnumber,setCarnumber] = useState("");
+  const [urlimg,setUrlimg] = useState("");
   const router = useRouter();
-  async function getData() {
+  async function getData(result) {
     try {
+
       const response = await fetch(
-        `https://api-c3vk.onrender.com/vincheck?input_text=${scanReult}`
+        `https://api-c3vk.onrender.com/vincheck?input_text=${result}`
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      console.log(data.name);
+      console.log(scanReult)
+      console.log(data);
       if (data.name != null) {
         setName(data.name);
         setCarnumber(data.carnumber);
+        setUrlimg(data.image_url)
       } else {
         setVerify(false);
       }
@@ -47,8 +51,9 @@ export default function ScanPage() {
     function success(result) {
       scanner.clear();
       setScanReult(result);
-      getData();
+      getData(result);
     }
+    
     function error(err) {
       console.warn(err);
     }
@@ -58,6 +63,8 @@ export default function ScanPage() {
       router.push("/scan/idk");
     }
   }, [verify]);
+
+
 
   return (
     <>
@@ -72,7 +79,7 @@ export default function ScanPage() {
                 <div className="flex flex-col items-center pb-10">
                   <img
                     className="w-24 h-24 mb-3 rounded-full shadow-lg"
-                    src="/docs/images/people/profile-picture-3.jpg"
+                    src={urlimg}
                     alt="image"
                   />
                   <h5 className=" text-xl font-medium text-gray-900">
