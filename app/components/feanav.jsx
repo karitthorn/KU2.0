@@ -1,13 +1,15 @@
 "use client";
 import Link from "next/link";
+import { useRouter } from 'next/navigation'
 
 export default function Feanav() {
+  const router = useRouter()
   return (
     <>
       <nav class="bg-white border-gray-200 h-16">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <Link
-            href="/"
+          <button
+            onClick={() => router.back()}
             class="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <svg
@@ -22,7 +24,7 @@ export default function Feanav() {
                 fill="#33363F"
               />
             </svg>
-          </Link>
+          </button>
           <button
             data-collapse-toggle="navbar-dropdown"
             type="button"
