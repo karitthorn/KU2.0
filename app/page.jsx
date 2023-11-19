@@ -24,8 +24,8 @@ export default function Home() {
       const data = await response.json();
 
       if (data[0].image != null) {
-        console.log(data[0].image);
-        setImageUrls([data[0].image]);
+        console.log(data);
+        setImageUrls([data[0].image,data[1].image]);
       } else {
       }
 
