@@ -70,7 +70,7 @@ export default function FormInfoPage() {
                 ความประสงค์
               </label>
 <div>
-      <select value={selectedOption} onChange={handleDropdownChange} className=" w-full p-2.5 text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 h-11  mb-3" required>
+      <select value={selectedOption} onChange={handleDropdownChange} className=" w-full p-2.5 text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 h-11  mb-5" required>
       <option value="0">โปรดเลือก</option>
         <option value="1">ลงทะเบียนล่าช้าหรือรักษาสถานภาพนิสิต</option>
         <option value="2">เพิ่มหรือถอนรายวิชาล่าช้า</option>
