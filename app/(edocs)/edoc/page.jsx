@@ -2,8 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
-
-export default function Home() {
+export default function Edocpage() {
   const [succeed, setSucceed] = useState(false);
   const [url, setUrl] = useState(
     "https://verify.ink/assets/documents/electronic_records_and_signatures_in_commerce.pdf"
@@ -13,17 +12,16 @@ export default function Home() {
     if (succeed) {
       router.push("/succeed");
     }
-    
   }, [succeed]);
-  useEffect(() =>{
+  
+  useEffect(() => {
     let params = new URLSearchParams(document.location.search);
-    let pdfurl = params.get("pdfurl"); 
-    console.log(pdfurl)
-    if( pdfurl != null){
-      setUrl
+    let pdfurl = params.get("pdfurl");
+    console.log(pdfurl);
+    if (pdfurl != null) {
+      setUrl;
     }
-  },[])
-
+  }, []);
 
   return (
     <>
@@ -52,7 +50,7 @@ export default function Home() {
             <div className="block w-full p-2 bg-white border border-gray-200 rounded-lg shadow mt-6 mb-6 pt-7 pb-7">
               <div>
                 <a
-                 href={url}
+                  href={url}
                   download
                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 mt-6"
                 >
@@ -115,3 +113,4 @@ export default function Home() {
     </>
   );
 }
+

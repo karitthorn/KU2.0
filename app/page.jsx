@@ -21,7 +21,7 @@ export default function Home() {
             <div className="absolute inset-y-0 left-0  bottom-2  z-10 bg-gradient-to-r from-emerald-600 to-emerald-400 w-full rounded-br-3xl rounded-bl-3xl ">
               <div className=" flex w-full justify-between">
                 <h1 className="  text-white text-2xl font-bold w-full mt-6 ml-5">
-                  Hello, คริษฐ์ธร <br />
+                  Hello, คริษฐ์ธร 
                 </h1>
                 <svg
                   className="mr-2"
@@ -51,6 +51,7 @@ export default function Home() {
                 key={index}
                 className="w-[358px] h-[166px] rounded-[30px] mr-2"
                 src={imageUrl}
+                alt=""
               />
             ))}
           </div>
