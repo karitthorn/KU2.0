@@ -1,11 +1,13 @@
 "use client";
 
 import Navbar from "@/app/components/navbar";
+import Feanav from "@/app/components/feanav";
 
 export default function ScanPage() {
   return (
     <>
       <div className="md:w-[390px] rounded-sm bg-white ">
+        <Feanav/>
         <div className=" m-4">
           <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
             <div class="flex justify-end px-4 pt-4">
@@ -13,7 +15,7 @@ export default function ScanPage() {
             </div>
             <div class="flex flex-col items-center pb-10">
               <svg
-              className="mb-3"
+                className="mb-3"
                 xmlns="http://www.w3.org/2000/svg"
                 width="100px"
                 height="100px"
@@ -40,11 +42,10 @@ export default function ScanPage() {
               </div>
             </div>
           </div>
-
-          <div className="fixed bottom-0 w-full">
-            <Navbar />
-          </div>
         </div>
+      </div>
+      <div className="fixed bottom-0 w-full">
+        <Navbar />
       </div>
     </>
   );

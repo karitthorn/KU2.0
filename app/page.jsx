@@ -1,18 +1,46 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
 import Image from "next/image";
 import book from "@/public/img/homepage/book.png";
 import Qmenu from "@/app/components/qmenu";
+import takky from "@/public/img/takky.jpg";
 
 export default function Home() {
   const [imageUrls, setImageUrls] = useState([
     "https://via.placeholder.com/358x166",
     "https://via.placeholder.com/358x166",
-    "https://via.placeholder.com/358x166"
+    "https://via.placeholder.com/358x166",
   ]);
-  return (
 
+  async function getData() {
+    try {
+      const response = await fetch(
+        `https://api-c3vk.onrender.com/news?input_text=econ%2C1`
+      );
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+
+      if (data[0].image != null) {
+        console.log(data[0].image);
+        setImageUrls([data[0].image]);
+      } else {
+      }
+
+      return data;
+    } catch (error) {
+      console.error("An error occurred while fetching the data:", error);
+      return null;
+    }
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  return (
     <>
       <div className="md:w-[390px] rounded-sm bg-white">
         {/* Welcome */}
@@ -20,9 +48,16 @@ export default function Home() {
           <div>
             <div className="absolute inset-y-0 left-0  bottom-2  z-10 bg-gradient-to-r from-emerald-600 to-emerald-400 w-full rounded-br-3xl rounded-bl-3xl ">
               <div className=" flex w-full justify-between">
-                <h1 className="  text-white text-2xl font-bold w-full mt-6 ml-5">
-                  Hello, คริษฐ์ธร 
-                </h1>
+                <div className="flex">
+
+                <div class="rounded-full h-10 w-16 bg-gradient-to-r from-teal-400 to-yellow-200 min-h-fit min-w-fit mt-5 ml-3"></div>
+
+                  <h1 className="  text-white text-xl font-bold w-full mt-5 ml-2 leading-4 ">
+                    Hello!
+                    <br />
+                    <span className=" text-lg text-gray-100">ตัวอย่าง</span>
+                  </h1>
+                </div>
                 <svg
                   className="mr-2"
                   xmlns="http://www.w3.org/2000/svg"
@@ -44,14 +79,21 @@ export default function Home() {
         <Qmenu />
         {/* news */}
         <section className="flex p-4 flex-col ">
-          <h1 className="text-slate-900 text-xl font-bold  mb-4">KU News</h1>
+          <div className="flex justify-between">
+            <h1 className="text-slate-900 text-xl font-bold  mb-4">KU News</h1>
+            <div class="text-right text-blue-500 text-xs font-normal mt-2">
+              Show all
+            </div>
+          </div>
           <div className="flex flex-row overflow-x-scroll">
             {imageUrls.map((imageUrl, index) => (
               <img
                 key={index}
-                className="w-[358px] h-[166px] rounded-[30px] mr-2"
+                className="w-[358px] h-[166px] rounded-[30px] mr-2 shadow-lg"
                 src={imageUrl}
                 alt=""
+                width={358}
+                height={166}
               />
             ))}
           </div>

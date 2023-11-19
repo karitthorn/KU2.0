@@ -59,7 +59,7 @@ export default function Navbar() {
                   <span class="flex flex-col items-center">
                     {/* <!-- Icon --> */}
 
-                    <Image class=" w-16 h-16  rounded-full shadow-xl relative  bottom-12 object-none" src={takky} width={64} height={64} alt=""></Image>
+                    <Image class=" w-16 h-16  rounded-full shadow-xl relative  bottom-12 object-none " src={takky} width={64} height={64} alt=""></Image>
 
                     {/* <!-- Text --> */}
                     <span class="text-xs mb-2 transition-all duration-200"></span>
