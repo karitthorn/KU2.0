@@ -19,7 +19,7 @@ export default function Edocpage() {
     let pdfurl = params.get("pdfurl");
     console.log(pdfurl);
     if (pdfurl != null) {
-      setUrl;
+      setUrl(pdfurl);
     }
   }, []);
 
