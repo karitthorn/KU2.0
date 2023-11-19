@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
 import { useRouter, useSearchParams } from "next/navigation";
 import Feanav from "../components/feanav";
+import Link from "next/link";
 
 export default function ScanPage() {
   const [scanReult, setScanReult] = useState("");
@@ -101,12 +102,12 @@ export default function ScanPage() {
                     >
                       Call Sos
                     </a>
-                    <a
-                      href="#"
+                    <Link
+                      href="/reportpage"
                       className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 ms-3"
                     >
                       Report
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
