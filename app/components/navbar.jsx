@@ -5,6 +5,7 @@ import card from "@/public/img/card.png";
 import menu from "@/public/img/menu.png";
 import user from "@/public/img/user.jpg";
 import Link from "next/link";
+import takky from "@/public/img/takky.jpg";
 export default function Navbar() {
   return (
     <>
@@ -58,7 +59,7 @@ export default function Navbar() {
                   <span class="flex flex-col items-center">
                     {/* <!-- Icon --> */}
 
-                    <div class="w-16 h-16  rounded-full shadow-lg relative  bottom-12    bg-slate-300 "></div>
+                    <Image class=" w-16 h-16  rounded-full shadow-xl relative  bottom-12 object-none" src={takky} width={64} height={64} alt=""></Image>
 
                     {/* <!-- Text --> */}
                     <span class="text-xs mb-2 transition-all duration-200"></span>
@@ -71,7 +72,7 @@ export default function Navbar() {
                 <a href="#" class="p-3 text-gray-400 hover:text-green-500">
                   <span class="flex flex-col items-center">
                     {/* <!-- Icon --> */}
-                    <Image className="w-6 h-5" alt="" src={card} />
+                    <Image className="w-6 h-5 " alt="" src={card} />
 
                     {/* <!-- Text --> */}
                     <span class="text-xs mb-2 transition-all duration-200">

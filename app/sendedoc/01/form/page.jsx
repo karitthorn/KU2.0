@@ -3,15 +3,14 @@ import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
 import Feanav from "@/app/components/feanav";
 
-
 export default function ScanPage() {
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email)
-    console.log(fullName)
+    console.log(email);
+    console.log(fullName);
     // Collect data and perform necessary actions
   };
 
@@ -43,12 +42,12 @@ export default function ScanPage() {
                 htmlFor="code"
                 className="block mb-2 text-sm font-medium text-gray-900"
               >
-                ชื่อ-นามสกุล นิสิต
+                รหัสนิสิต
               </label>
               <input
                 type="text"
                 id="code"
-                placeholder="นาย ตัวอย่าง มั่นคง"
+                placeholder="66xxxxxxx"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
                 value={fullName}
@@ -65,8 +64,8 @@ export default function ScanPage() {
         </section>
       </div>
       <div className="fixed bottom-0 w-full">
-          <Navbar />
-        </div>
+        <Navbar />
+      </div>
     </>
   );
 }

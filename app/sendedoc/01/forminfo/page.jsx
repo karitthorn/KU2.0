@@ -5,13 +5,13 @@ import Feanav from "@/app/components/feanav";
 
 
 export default function FormInfoPage() {
-  const [email, setEmail] = useState("");
-  const [fullName, setFullName] = useState("");
+  const [name, setName] = useState("");
+  const [code, setCode] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email)
-    console.log(fullName)
+    console.log(name)
+    console.log(code)
     // Collect data and perform necessary actions
   };
 
@@ -23,19 +23,19 @@ export default function FormInfoPage() {
           <form onSubmit={handleSubmit}>
             <div className="mb-6">
               <label
-                htmlFor="email"
+                htmlFor="name"
                 className="block mb-2 text-sm font-medium text-gray-900"
               >
                 ชื่อ-นามสกุล นิสิต
               </label>
               <input
                 type="text"
-                id="email"
+                id="name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 placeholder="นาย ตัวอย่าง มั่นคง"
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="mb-6">
@@ -51,8 +51,8 @@ export default function FormInfoPage() {
                 placeholder="66xxxxxxx"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
               />
             </div>
             <button
