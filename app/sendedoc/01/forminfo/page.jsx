@@ -73,7 +73,7 @@ export default function FormInfoPage() {
                 type="text"
                 id="name"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                placeholder="นาย ตัวอย่าง มั่นคง"
+                placeholder="ชื่อ-นามสกุล ภาษาอังกฤษเท่านั้น"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
