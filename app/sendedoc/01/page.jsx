@@ -39,17 +39,7 @@ export default function ScanPage() {
                   กรอกเอกสารในใบคำร้อง
                 </button>
               </Link>
-              <a
-                href="https://scontent.fbkk5-5.fna.fbcdn.net/v/t1.6435-9/206284168_161134366046200_420121818485335831_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=84c479&_nc_ohc=33RQMoEp0iYAX8IwU_K&_nc_ht=scontent.fbkk5-5.fna&oh=00_AfAnoEF9IW_d50-Lpa2l2devnyK7wvxa17UDi60cmuTzYg&oe=65805743"
-                download
-              >
-                <button
-                  type="button"
-                  class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200  "
-                >
-                  โหลด
-                </button>
-              </a>
+
             </div>
           </div>
           {/* --------- */}
