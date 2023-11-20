@@ -29,14 +29,14 @@ export default function ScanPage() {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               Step 1
             </h5>
-            <p className="font-normal text-gray-700">กรอกเอกสาร</p>
+            <p className="font-normal text-gray-700">กรอกเอกสาร เเละ ส่งอีเมล</p>
             <div className=" flex justify-start mt-3">
               <Link href="/sendedoc/01/forminfo">
                 <button
                   type="button"
                   class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 "
                 >
-                  กรอกเอกสารในใบคำร้อง
+                  เริ่มต้น
                 </button>
               </Link>
               <a
@@ -52,6 +52,7 @@ export default function ScanPage() {
               </a>
             </div>
           </div>
+
           {/* --------- */}
           <div className="flex w-full justify-center items-center mt-3 mb-3 ">
             <Image width={30} height={30} src={down} alt="" className="" />
@@ -60,27 +61,6 @@ export default function ScanPage() {
           <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 mb-2">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               Step 2
-            </h5>
-            <p className="font-normal text-gray-700">ส่งอีเมลไปหาอาจารย์</p>
-            <div className=" flex justify-start mt-3">
-              <Link href="/sendedoc/01/form">
-                <button
-                  type="button"
-                  class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 "
-                >
-                  ส่งเอกสาร
-                </button>
-              </Link>
-            </div>
-          </div>
-          {/* --------- */}
-          <div className="flex w-full justify-center items-center mt-3 mb-3 ">
-            <Image width={30} height={30} src={down} alt="" className="" />
-          </div>
-          {/* ---------------- */}
-          <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 mb-2">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-              Step 3
             </h5>
             <p className="font-normal text-gray-700">รออาจารย์ตอบกลับ</p>
             <div className=" flex justify-start mt-3">
@@ -100,7 +80,7 @@ export default function ScanPage() {
           {/* ---------------- */}
           <div className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 mb-2">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-              Step 4
+              Step 3
             </h5>
             <p className="font-normal text-gray-700">ส่งเอกสารกลับให้คุณ</p>
             <div className=" flex justify-start mt-3">
