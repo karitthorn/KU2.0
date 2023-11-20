@@ -10,6 +10,7 @@ export default function FormInfoPage() {
   const [code, setCode] = useState("");
   const [showDownload, setShowDownload] = useState(false);
   const [pdf64,setPdf64] = useState("")
+  const [showerror,setShowerror] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,6 +50,7 @@ export default function FormInfoPage() {
 
       return data;
     } catch (error) {
+      alert("กรอกรหัสนิสิตไม่ครบ 10 ตัว หรือ API ไม่ตอบสนอง ");
       console.error("An error occurred while fetching the data:", error);
       return null;
     }
@@ -82,7 +84,7 @@ export default function FormInfoPage() {
                 htmlFor="code"
                 className="block mb-2 text-sm font-medium text-gray-900"
               >
-                รหัสนิสิต
+                รหัสนิสิต(อย่างน้อย 10 ตัว)
               </label>
               <input
                 type="number"
@@ -93,6 +95,9 @@ export default function FormInfoPage() {
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
               />
+              {showerror && (<>
+              <p className="text-xs text-red-600">กรอกอย่างน้อย 10 ตัว</p>
+              </>)}
             </div>
             {/* -------------- */}
             <label
