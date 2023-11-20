@@ -53,7 +53,7 @@ export default function FormInfoPage() {
                 รหัสนิสิต
               </label>
               <input
-                type="text"
+                type="number"
                 id="code"
                 placeholder="66xxxxxxx"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
