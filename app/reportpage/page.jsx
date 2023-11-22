@@ -1,3 +1,4 @@
+// Report วินมอไซต์ ที่อยู่ในระบบ
 "use client";
 import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
@@ -14,11 +15,8 @@ export default function FormInfoPage() {
     console.log(name);
     console.log(code);
     getData();
-    // const refresh = () => window.location.reload(true);
-    // refresh();
-    // Collect data and perform necessary actions
   };
-
+//รับค่า vinname
   useEffect(() => {
     let params = new URLSearchParams(document.location.search);
     let pdfurl = params.get("vinname");
@@ -27,7 +25,7 @@ export default function FormInfoPage() {
       setVinname(pdfurl)
     }
   }, []);
-
+//api นำ คำร้องส่งเข้า line เเอดมิน
   async function getData() {
     try {
       const response = await fetch(

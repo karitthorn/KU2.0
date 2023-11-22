@@ -1,3 +1,4 @@
+//เพิ่ม extension ลงใน เเอป
 "use client";
 import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
@@ -7,15 +8,13 @@ import FileBase64 from "react-file-base64";
 export default function FormInfoPage() {
   const [fileBase, setFileBase] = useState("");
   const [fileBase2, setFileBase2] = useState("");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
-  const [showDownload, setShowDownload] = useState(false);
-  const [pdf64, setPdf64] = useState("");
   const [showerror, setShowerror] = useState(false);
   const [url, setUrl] = useState("");
 
+  //เมื่อ submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -40,6 +39,7 @@ export default function FormInfoPage() {
     setSelectedOption(e.target.value);
   };
 
+//ส่ง extension ไปใน database
   async function postData() {
     if (fileBase) {
       const formdata = new FormData();
@@ -78,7 +78,7 @@ export default function FormInfoPage() {
 
       return data;
     } catch (error) {
-      alert("กรอกรหัสนิสิตไม่ครบ 10 ตัว หรือ API ไม่ตอบสนอง ");
+      alert(" API ไม่ตอบสนอง ");
       console.error("An error occurred while fetching the data:", error);
       return null;
     }

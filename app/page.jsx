@@ -1,3 +1,4 @@
+// หน้าหลัก เเอปนิสิต
 "use client";
 import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
@@ -14,6 +15,7 @@ export default function Home() {
     "https://via.placeholder.com/358x166",
   ]);
 
+  // รับ data มาจาก api Kunews
   async function getData() {
     try {
       const response = await fetch(
@@ -51,7 +53,7 @@ export default function Home() {
               <div className=" flex w-full justify-between">
                 <div className="flex">
 
-                <div class="rounded-full h-10 w-16 bg-gradient-to-r from-teal-400 to-yellow-200 min-h-fit min-w-fit mt-5 ml-3"></div>
+                <div className="rounded-full h-10 w-16 bg-gradient-to-r from-teal-400 to-yellow-200 min-h-fit min-w-fit mt-5 ml-3"></div>
 
                   <h1 className="  text-white text-xl font-bold w-full mt-5 ml-2 leading-4 ">
                     Hello!
@@ -82,7 +84,7 @@ export default function Home() {
         <section className="flex p-4 flex-col ">
           <div className="flex justify-between">
             <h1 className="text-slate-900 text-xl font-bold  mb-4">KU News</h1>
-            <div class="text-right text-blue-500 text-xs font-normal mt-2">
+            <div className="text-right text-blue-500 text-xs font-normal mt-2">
               Show all
             </div>
           </div>

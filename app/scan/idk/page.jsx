@@ -1,3 +1,4 @@
+//กรณีไม่พบ Qrcode ที่ไม่อยู่่ใน database
 "use client";
 
 import Navbar from "@/app/components/navbar";
@@ -10,11 +11,11 @@ export default function ScanPage() {
       <div className="md:w-[390px] rounded-sm bg-white ">
         <Feanav />
         <div className=" m-4">
-          <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-            <div class="flex justify-end px-4 pt-4">
+          <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+            <div className="flex justify-end px-4 pt-4">
               {/* <!-- Dropdown menu --> */}
             </div>
-            <div class="flex flex-col items-center pb-10">
+            <div className="flex flex-col items-center pb-10">
               <svg
                 className="mb-3"
                 xmlns="http://www.w3.org/2000/svg"
@@ -30,13 +31,13 @@ export default function ScanPage() {
                   fill="#000000"
                 />
               </svg>
-              <h5 class="mb-1 text-xl font-medium text-gray-900">
+              <h5 className="mb-1 text-xl font-medium text-gray-900">
                 ไม่พบข้อมูล
               </h5>
-              <div class="flex mt-4 md:mt-6">
+              <div className="flex mt-4 md:mt-6">
                 <a
                   href="tel:0-2942-8222"
-                  class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-red-500 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-blue-300"
                 >
                   Call Sos
                 </a>

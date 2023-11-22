@@ -1,3 +1,4 @@
+// Report Vin เมื่อไม่พบผู้ใช้ vin ในระบบ
 "use client";
 import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
@@ -27,7 +28,7 @@ export default function FormInfoPage() {
       setVinname(pdfurl)
     }
   }, []);
-
+//ส่งข้อมูลอาทิเช่น เลขทะเบียน,หัวข้อ,... ไปใน line
   async function getData() {
     try {
       const response = await fetch(

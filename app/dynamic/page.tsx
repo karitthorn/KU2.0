@@ -1,4 +1,5 @@
-// Your Next.js component
+
+//หน้านี้ไม่เกี่ยวกับเเอป เพียงทดลอง  run html ลงใน ไฟล์
 "use client";
 import { useState, useEffect } from "react";
 

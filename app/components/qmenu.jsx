@@ -1,3 +1,4 @@
+// ระบบ Show funtions ในหน้าหลัก
 import Image from "next/image";
 import book from "@/public/img/homepage/book.png";
 import camera from "@/public/img/Camera.png";
