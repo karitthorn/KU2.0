@@ -8,6 +8,8 @@ import cal from "@/public/img/homepage/cal.png";
 import more from "@/public/img/more.png";
 import edoc from "@/public/img/homepage/edoc.png";
 import g from "@/public/img/homepage/g.png"
+import extension from "@/public/img/extension.png";
+
 import Link from "next/link";
 export default function Qmenu() {
   return (
@@ -32,13 +34,13 @@ export default function Qmenu() {
               Check in
             </span>
           </a>
-          <a className="flex justify-center flex-col items-center">
+          <Link href="/extensionpage" className="flex justify-center flex-col items-center">
             <div className="w-[77px] h-[77px] relative mb-2">
               <div className="w-[77px] h-[77px] left-0 top-0 absolute  rounded-[20px] shadow-lg" />
-              <div className="w-[68px] h-[62px] px-[8.84px] pt-[3.10px] pb-[3.72px] justify-center items-center inline-flex m-1">
+              <div className="w-[68px] h-[62px] px-[8.84px] pt-[3.10px] pb-[3.72px] justify-center items-center inline-flex m-1.5">
                 <Image
                   className="w-10   items-center"
-                  src={school}
+                  src={extension}
                   width={200}
                   height={200}
                   alt="calendar"
@@ -46,9 +48,9 @@ export default function Qmenu() {
               </div>
             </div>
             <span className=" mb-2 transition-all duration-200 text-sm text-gray-500">
-              About KU
+              Extension
             </span>
-          </a>
+          </Link>
           <Link
             className="flex justify-center flex-col items-center"
             href="#"
