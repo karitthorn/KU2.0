@@ -25,7 +25,7 @@ export default function Home() {
 
       if (data[0].image != null) {
         console.log(data);
-        setImageUrls([data[0].image,data[1].image]);
+        setImageUrls(data.map(item => item.image));
       } else {
       }
 
