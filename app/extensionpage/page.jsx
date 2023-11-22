@@ -47,7 +47,7 @@ export default function Home() {
         {imageUrls.map((imageUrl, index) => (
           <>
             <div className="flex flex-col max-w-sm p-3 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 mb-2  w-full ">
-            <img
+              <img
                 key={index}
                 className="w-[358px] h-[166px] rounded-lg mr-2  mb-3"
                 src={imageUrl}
