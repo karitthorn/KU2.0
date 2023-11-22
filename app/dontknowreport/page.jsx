@@ -3,20 +3,20 @@ import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
 import Feanav from "@/app/components/feanav";
 import { useRouter } from 'next/navigation'
+import Link from "next/link";
 
 export default function FormInfoPage() {
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
+  const [dics,setDics] = useState("");
   const [vinname,setVinname] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name);
+    console.log(dics)
     console.log(code);
     getData();
-    // const refresh = () => window.location.reload(true);
-    // refresh();
-    // Collect data and perform necessary actions
   };
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function FormInfoPage() {
   async function getData() {
     try {
       const response = await fetch(
-        `https://api-c3vk.onrender.com/vin_line?input_text=${vinname},${name},${code}`, {method: "POST"}
+        `https://api-c3vk.onrender.com/vin_line?input_text=${''},${name},${dics},${code}`, {method: "POST"}
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -65,7 +65,7 @@ export default function FormInfoPage() {
                 htmlFor="name"
                 className="block mb-2 text-sm font-medium text-gray-900"
               >
-                หัวข้อร้องเรียน
+                หัวข้อ
               </label>
               <input
                 type="text"
@@ -82,7 +82,24 @@ export default function FormInfoPage() {
                 htmlFor="code"
                 className="block mb-2 text-sm font-medium text-gray-900"
               >
-                คำอธิบาย
+               คำอธิบาย
+              </label>
+              <input
+                type="text"
+                id="code"
+                placeholder="โกงจากราคา ....,คุมคามโดย......"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                required
+                value={dics}
+                onChange={(e) => setDics(e.target.value)}
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="code"
+                className="block mb-2 text-sm font-medium text-gray-900"
+              >
+                เลขทะเบียน
               </label>
               <input
                 type="text"

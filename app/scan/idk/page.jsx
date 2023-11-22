@@ -4,10 +4,11 @@ import Navbar from "@/app/components/navbar";
 import Feanav from "@/app/components/feanav";
 
 export default function ScanPage() {
+
   return (
     <>
       <div className="md:w-[390px] rounded-sm bg-white ">
-        <Feanav/>
+        <Feanav />
         <div className=" m-4">
           <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
             <div class="flex justify-end px-4 pt-4">

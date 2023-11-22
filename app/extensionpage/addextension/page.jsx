@@ -2,45 +2,73 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
 import Feanav from "@/app/components/feanav";
+import FileBase64 from "react-file-base64";
 
 export default function FormInfoPage() {
+  const [fileBase, setFileBase] = useState("");
+  const [fileBase2, setFileBase2] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
   const [name, setName] = useState("");
   const [code, setCode] = useState("");
   const [showDownload, setShowDownload] = useState(false);
-  const [pdf64,setPdf64] = useState("")
-  const [showerror,setShowerror] = useState(false)
+  const [pdf64, setPdf64] = useState("");
+  const [showerror, setShowerror] = useState(false);
+  const [url, setUrl] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log(fileBase);
+    console.log(fileBase2);
+    console.log(url);
     console.log(name);
     console.log(code);
-    console.log(selectedOption);
     // Collect data and perform necessary actions
-    getData();
-    
+    postData();
+  };
+  const handleFileInputChange = (e) => {
+    if (e.target.files) {
+      setFileBase(e.target.files[0]);
+    }
+  };
+  const handleFileInputChange2 = (file) => {
+    setFileBase642(file.base64);
   };
 
   const handleDropdownChange = (e) => {
     setSelectedOption(e.target.value);
   };
 
-  async function getData() {
+  async function postData() {
+    if (fileBase) {
+      const formdata = new FormData();
+      formdata.append("file", file);
+      // const result = await fetch(``)
+    }
     try {
       const response = await fetch(
-        `https://api-c3vk.onrender.com/write_pdf?input_text=${name},${code}`
+        `https://api-c3vk.onrender.com/post_extension`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            image: fileBase64,
+            name: name,
+            creator: code,
+            url: url,
+            logo: fileBase64,
+          }),
+        }
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      console.log(data)
-      setPdf64(data)
-      console.log(pdf64)
+      console.log(data);
       alert("ส่งสำเร็จ");
-      setShowDownload(true)
-
 
       // if (data[0].image != null) {
       //   console.log(data);
@@ -62,6 +90,18 @@ export default function FormInfoPage() {
         <Feanav />
         <section className="mt-10">
           <form onSubmit={handleSubmit}>
+            <div className="mb-6">
+              <label className="mb-2">Logo</label>
+              <div>
+                <input type="file" onChange={handleFileInputChange} />
+              </div>
+            </div>
+            <div className="mb-6">
+              <label className="mb-2">ภาพ 358x166</label>
+              <div>
+                <input type="file" onChange={handleFileInputChange2} />
+              </div>
+            </div>
             <div className="mb-6">
               <label
                 htmlFor="name"
@@ -92,8 +132,8 @@ export default function FormInfoPage() {
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 placeholder="www.exslmple.com"
                 required
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
               />
             </div>
             <div className="mb-6">
@@ -112,30 +152,13 @@ export default function FormInfoPage() {
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
               />
-              {showerror && (<>
-              <p className="text-xs text-red-600">กรอกอย่างน้อย 10 ตัว</p>
-              </>)}
+              {showerror && (
+                <>
+                  <p className="text-xs text-red-600">กรอกอย่างน้อย 10 ตัว</p>
+                </>
+              )}
             </div>
             {/* -------------- */}
-            <label
-              htmlFor="code"
-              className="block mb-2 text-sm font-medium text-gray-900"
-            >
-              url Type
-            </label>
-            <div>
-              <select
-                value={selectedOption}
-                onChange={handleDropdownChange}
-                className=" w-full p-2.5 text-gray-900 bg-gray-50 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 h-11  mb-5"
-                required
-              >
-                <option value="0">ความสะดวกสบาย</option>
-                <option value="1">การเดินทาง</option>
-                <option value="2">กิจกรรม</option>
-                <option value="3">อื่นๆ</option>
-              </select>
-            </div>
             {/* --------------------- */}
             <button
               type="submit"

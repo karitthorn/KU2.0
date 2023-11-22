@@ -10,12 +10,11 @@ export default function ScanPage() {
   const [scanReult, setScanReult] = useState("");
   const [verify, setVerify] = useState(true);
   const [name, setName] = useState("");
-  const [carnumber,setCarnumber] = useState("");
-  const [urlimg,setUrlimg] = useState("");
+  const [carnumber, setCarnumber] = useState("");
+  const [urlimg, setUrlimg] = useState("");
   const router = useRouter();
   async function getData(result) {
     try {
-
       const response = await fetch(
         `https://api-c3vk.onrender.com/vincheck?input_text=${result}`
       );
@@ -23,12 +22,12 @@ export default function ScanPage() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      console.log(scanReult)
+      console.log(scanReult);
       console.log(data);
       if (data.name != null) {
         setName(data.name);
         setCarnumber(data.carnumber);
-        setUrlimg(data.image_url)
+        setUrlimg(data.image_url);
       } else {
         setVerify(false);
       }
@@ -55,7 +54,7 @@ export default function ScanPage() {
       setScanReult(result);
       getData(result);
     }
-    
+
     function error(err) {
       console.warn(err);
     }
@@ -66,14 +65,12 @@ export default function ScanPage() {
     }
   }, [verify]);
 
-
-
   return (
     <>
       <div className="md:w-[390px] rounded-sm bg-white ">
         {scanReult ? (
           <>
-          <Feanav/>
+            <Feanav />
             <div className=" m-4">
               <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                 <div className="flex justify-end px-4 pt-4">
@@ -85,9 +82,7 @@ export default function ScanPage() {
                     src={urlimg}
                     alt="image"
                   />
-                  <h5 className=" text-xl font-medium text-gray-900">
-                    {name}
-                  </h5>
+                  <h5 className=" text-xl font-medium text-gray-900">{name}</h5>
                   <span className="text-sm text-gray-500 mb-1">
                     {carnumber}
                   </span>
@@ -103,8 +98,8 @@ export default function ScanPage() {
                       Call Sos
                     </a>
                     <Link
-                      href="/reportpage"
                       className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 ms-3"
+                      href= {`/reportpage?vinname=${name}`}
                     >
                       Report
                     </Link>
@@ -113,8 +108,8 @@ export default function ScanPage() {
               </div>
             </div>
             <div className="fixed bottom-0 w-full">
-                <Navbar />
-              </div>
+              <Navbar />
+            </div>
           </>
         ) : (
           <>
