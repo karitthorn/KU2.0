@@ -91,7 +91,7 @@ export default function Home() {
             {imageUrls.map((imageUrl, index) => (
               <img
                 key={index}
-                className="w-[358px] h-[166px] rounded-[30px] mr-2 shadow-lg"
+                className="w-[358px] h-[166px] rounded-[30px] mr-2 shadow-lg min-w-[358px] min-h-[166px]"
                 src={imageUrl}
                 alt=""
                 width={358}
