@@ -105,7 +105,7 @@ export default function Home() {
           เพิ่ม Extension ของคุณ
         </Link>
         <div className="h-40"></div>
-        <div className="fixed bottom-0 w-full">
+        <div className="fixed bottom-0 ">
           <Navbar />
         </div>
       </div>

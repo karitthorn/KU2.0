@@ -10,7 +10,7 @@ import takky from "@/public/img/takky.jpg";
 export default function Navbar() {
   return (
     <>
-      <div className="flex items-center justify-center  w-full">
+      <div className="flex items-center w-full justify-center  md:justify-start">
         <div className="">
           {/* <div className="w-full max-w-md px-7 py-10 mx-auto  shadow-xl"> */}
           {/* Navigation Bar */}

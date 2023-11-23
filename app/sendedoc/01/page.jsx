@@ -7,7 +7,21 @@ import Feanav from "@/app/components/feanav";
 import down from "@/public/svg/down.svg";
 import Link from "next/link";
 
+// https://api-c3vk.onrender.com/pdf_check?input_text=6610702993
+
 export default function ScanPage() {
+  const [persent, setPersent] = useState("");
+  useEffect(() => {
+    fetch("https://api-c3vk.onrender.com/pdf_check?input_text=6610702993")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setPersent((data / 4) * 100);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   return (
     <>
       <div className="md:w-[390px] rounded-sm bg-white p-4">
@@ -21,7 +35,7 @@ export default function ScanPage() {
             <div class="w-full bg-gray-200 rounded-full h-2.5 mb-4 ">
               <div
                 class="bg-green-600 h-2.5 rounded-full 0"
-                style={{ width: "15%" }}
+                style={{ width: persent }}
               ></div>
             </div>
           </div>

@@ -99,11 +99,13 @@ export default function Home() {
               />
             ))}
           </div>
+
         </section>
         <div className="h-10"></div>
         <div className="fixed bottom-0 w-full">
           <Navbar />
         </div>
+
       </div>
     </>
   );

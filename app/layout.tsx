@@ -24,8 +24,13 @@ export default function RootLayout({
         />
       </head>
       <body className={prompt.className}>
-      <div className="hidden md:block md:text-2xl">🚧 กรุณาเปิดใน emulated หรือ เปิดเว็ปนี้ผ่านมือถือของท่าน 🚧</div>
-        <div className="md:invisible">{children}</div>
+        <div>
+          <div className="md:flex md:justify-center md:items-center">
+            <div className=" w-screen h-screen md:w-96 md:h-96 ">
+              <div>{children}</div>
+            </div>
+          </div>
+        </div>
       </body>
     </html>
   );
