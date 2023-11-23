@@ -35,8 +35,6 @@ export default function ExNavbar() {
               Add extension
             </button>
           </Link>
-
-
         </div>
       </nav>
     </>
