@@ -1,4 +1,4 @@
-//หน้า Show extension ทั้งหทดภายในเเอป
+//หน้า Show extension ทั้งหมดภายในเเอป
 "use client";
 import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";

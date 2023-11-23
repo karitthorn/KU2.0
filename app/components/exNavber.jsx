@@ -1,4 +1,4 @@
-//Feanav นำไปเเสดงบนสุดของหน้าต่างๆ เพื่อกด ย้อนกลับ
+//exNavbar นำไปเเสดงบนสุดของหน้าต่างๆ เพื่อกด ย้อนกลับ เเละ กดสร้าง extension
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

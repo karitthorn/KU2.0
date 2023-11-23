@@ -16,6 +16,7 @@ export default function ScanPage() {
   const [step3, setStep3] = useState("ยังไม่ได้ดำเนินการ");
   const [step4, setStep4] = useState("ยังไม่ได้ดำเนินการ");
 
+  //รับ data มาจาก api ตาม step ของเอกสาร
   useEffect(() => {
     fetch("https://api-c3vk.onrender.com/pdf_check?input_text=6610702993")
       .then((response) => response.json())
