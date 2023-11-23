@@ -11,12 +11,35 @@ import Link from "next/link";
 
 export default function ScanPage() {
   const [persent, setPersent] = useState("");
+  const [step1, setStep1] = useState("ยังไม่ได้ดำเนินการ");
+  const [step2, setStep2] = useState("ยังไม่ได้ดำเนินการ");
+  const [step3, setStep3] = useState("ยังไม่ได้ดำเนินการ");
+  const [step4, setStep4] = useState("ยังไม่ได้ดำเนินการ");
+
   useEffect(() => {
     fetch("https://api-c3vk.onrender.com/pdf_check?input_text=6610702993")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
         setPersent((data / 4) * 100);
+        if (data == "1") {
+          setStep1("ดำเนินการเเล้ว");
+        }
+        if (data == "2") {
+          setStep1("ดำเนินการเเล้ว");
+          setStep2("ดำเนินการเเล้ว");
+        }
+        if (data == "3") {
+          setStep1("ดำเนินการเเล้ว");
+          setStep2("ดำเนินการเเล้ว");
+          setStep3("ดำเนินการเเล้ว");
+        }
+        if (data == "4") {
+          setStep1("ดำเนินการเเล้ว");
+          setStep2("ดำเนินการเเล้ว");
+          setStep3("ดำเนินการเเล้ว");
+          setStep4("ดำเนินการเเล้ว");
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -52,8 +75,7 @@ export default function ScanPage() {
                 type="button"
                 class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200  focus:z-10 focus:ring-4 focus:ring-gray-200  "
               >
-                สถานะ :{" "}
-                <span className=" text-yellow-600">ยังไม่ได้ดำเนินการ</span>
+                สถานะ : <span className=" text-yellow-600">{step1}</span>
               </button>
             </div>
           </div>
@@ -73,7 +95,7 @@ export default function ScanPage() {
                 class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200  focus:z-10 focus:ring-4 focus:ring-gray-200  "
               >
                 สถานะ :{" "}
-                <span className=" text-yellow-600">ยังไม่ได้ดำเนินการ</span>
+                <span className=" text-yellow-600">{step2}</span>
               </button>
             </div>
           </div>
@@ -95,7 +117,7 @@ export default function ScanPage() {
                 class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200  focus:z-10 focus:ring-4 focus:ring-gray-200  "
               >
                 สถานะ :{" "}
-                <span className=" text-yellow-600">ยังไม่ได้ดำเนินการ</span>
+                <span className=" text-yellow-600">{step3}</span>
               </button>
             </div>
           </div>
@@ -115,7 +137,7 @@ export default function ScanPage() {
                 class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200  focus:z-10 focus:ring-4 focus:ring-gray-200  "
               >
                 สถานะ :{" "}
-                <span className=" text-yellow-600">ยังไม่ได้ดำเนินการ</span>
+                <span className=" text-yellow-600">{step4}</span>
               </button>
             </div>
           </div>
