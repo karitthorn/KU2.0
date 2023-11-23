@@ -37,37 +37,6 @@ export default function Home() {
     }
   }
 
-  // ส่ง session ไปที่ website เพื่อไม่ต้อง login ใหม่
-  function handleAuth(website) {
-    const sendData = async () => {
-      try {
-        const dataToSend = {
-          timestamp: new Date().toISOString(),
-          session: "9i4903249jejjexxxxxxxx",
-          /* Your data to send */
-        };
-        const response = await fetch(website, {
-          method: "POST",
-          headers: {
-            Auth: "AppNisitkuAuth",
-            // Add any additional headers as needed
-          },
-          body: JSON.stringify(dataToSend),
-        });
-
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        // Handle the response as needed
-      } catch (error) {
-        console.error("Error sending data:", error);
-      }
-    };
-
-    // This will trigger the data sending when the component is mounted
-    sendData();
-  } // Add any dependencies if needed
 
   useEffect(() => {
     getData();
@@ -115,7 +84,7 @@ export default function Home() {
                 </div>
 
                 <div className=" flex justify-start mt-3">
-                  <Link href={data.url} onClick={() => handleAuth(data.url)}>
+                  <Link href={data.url}>
                     <button
                       type="button"
                       className="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 "
