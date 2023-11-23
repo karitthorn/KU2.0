@@ -3,6 +3,7 @@
 
 import Navbar from "@/app/components/navbar";
 import Feanav from "@/app/components/feanav";
+import Link from "next/link";
 
 export default function ScanPage() {
 
@@ -41,6 +42,12 @@ export default function ScanPage() {
                 >
                   Call Sos
                 </a>
+                <Link
+                  href="/dontknowreport"
+                  className=" ml-4 inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-gray-500 rounded-lg hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                >
+                  Report
+                </Link>
               </div>
             </div>
           </div>

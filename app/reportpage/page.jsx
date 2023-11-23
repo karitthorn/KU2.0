@@ -29,7 +29,7 @@ export default function FormInfoPage() {
   async function getData() {
     try {
       const response = await fetch(
-        `https://api-c3vk.onrender.com/vin_line?input_text=${vinname},${name},${code}`, {method: "POST"}
+        `https://api-c3vk.onrender.com/vin_line?input_text=${vinname},${name},${code},${""}`, {method: "POST"}
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
