@@ -30,7 +30,7 @@ export default function ExNavbar () {
             <Link href="extensionpage/addextension">
             <button
               type="button"
-              class="text-white bg-cyan-500 hover:bg-cyan-700 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mt-1"
+              class="text-white bg-cyan-500 hover:bg-cyan-700 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 mt-1"
             >
               Add extension
             </button>
