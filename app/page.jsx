@@ -6,7 +6,6 @@ import Image from "next/image";
 import book from "@/public/img/homepage/book.png";
 import Qmenu from "@/app/components/qmenu";
 
-
 export default function Home() {
   const [imageUrls, setImageUrls] = useState([
     "https://via.placeholder.com/358x166",
@@ -27,7 +26,7 @@ export default function Home() {
 
       if (data[0].image != null) {
         console.log(data);
-        setImageUrls(data.map(item => item.image));
+        setImageUrls(data.map((item) => item.image));
       } else {
       }
 
@@ -51,8 +50,7 @@ export default function Home() {
             <div className="absolute inset-y-0 left-0  bottom-2  z-10 bg-gradient-to-r from-emerald-600 to-emerald-400 w-full rounded-br-3xl rounded-bl-3xl ">
               <div className=" flex w-full justify-between">
                 <div className="flex">
-
-                <div className="rounded-full h-10 w-16 bg-gradient-to-r from-teal-400 to-yellow-200 min-h-fit min-w-fit mt-5 ml-3"></div>
+                  <div className="rounded-full h-10 w-16 bg-gradient-to-r from-teal-400 to-yellow-200 min-h-fit min-w-fit mt-5 ml-3"></div>
 
                   <h1 className="  text-white text-xl font-bold w-full mt-5 ml-2 leading-4 ">
                     Hello!
@@ -99,13 +97,11 @@ export default function Home() {
               />
             ))}
           </div>
-
         </section>
         <div className="h-10"></div>
         <div className="fixed bottom-0 w-full">
           <Navbar />
         </div>
-
       </div>
     </>
   );
