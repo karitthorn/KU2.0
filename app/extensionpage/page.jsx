@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
 import Link from "next/link";
 import Feanav from "../components/feanav";
+import ExNavbar from "../components/exNavber"
 
 export default function Home() {
   const [imageUrls, setImageUrls] = useState([
@@ -74,7 +75,7 @@ export default function Home() {
 
   return (
     <>
-      <Feanav />
+      <ExNavbar />
       <div className="flex flex-col justify-center items-center mt-5 m-4">
         {datarun.map((data, index) => (
           <>

@@ -5,7 +5,6 @@ import Navbar from "@/app/components/navbar";
 import Image from "next/image";
 import book from "@/public/img/homepage/book.png";
 import Qmenu from "@/app/components/qmenu";
-import takky from "@/public/img/takky.jpg";
 
 
 export default function Home() {

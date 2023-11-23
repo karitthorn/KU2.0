@@ -1,3 +1,4 @@
+//ตรวจสอบ Trcking เอกสาร
 "use client";
 import { useEffect, useState } from "react";
 import Navbar from "@/app/components/navbar";
@@ -29,17 +30,17 @@ export default function ScanPage() {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               Step 1
             </h5>
-            <p className="font-normal text-gray-700">กรอกเอกสาร</p>
+            <p className="font-normal text-gray-700">
+              อาจารย์ที่ปรึกษารับเรื่อง
+            </p>
             <div className=" flex justify-start mt-3">
-              <Link href="/sendedoc/01/forminfo">
-                <button
-                  type="button"
-                  class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 "
-                >
-                  กรอกเอกสารในใบคำร้อง
-                </button>
-              </Link>
-
+              <button
+                type="button"
+                class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200  focus:z-10 focus:ring-4 focus:ring-gray-200  "
+              >
+                สถานะ :{" "}
+                <span className=" text-yellow-600">ยังไม่ได้ดำเนินการ</span>
+              </button>
             </div>
           </div>
           {/* --------- */}
@@ -51,16 +52,15 @@ export default function ScanPage() {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               Step 2
             </h5>
-            <p className="font-normal text-gray-700">ส่งอีเมลไปหาอาจารย์</p>
+            <p className="font-normal text-gray-700">หัวหน้าภาควิชารับเรื่อง</p>
             <div className=" flex justify-start mt-3">
-              <Link href="/sendedoc/01/form">
-                <button
-                  type="button"
-                  class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 "
-                >
-                  ส่งเอกสาร
-                </button>
-              </Link>
+              <button
+                type="button"
+                class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200  focus:z-10 focus:ring-4 focus:ring-gray-200  "
+              >
+                สถานะ :{" "}
+                <span className=" text-yellow-600">ยังไม่ได้ดำเนินการ</span>
+              </button>
             </div>
           </div>
           {/* --------- */}
@@ -72,14 +72,16 @@ export default function ScanPage() {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               Step 3
             </h5>
-            <p className="font-normal text-gray-700">รออาจารย์ตอบกลับ</p>
+            <p className="font-normal text-gray-700">
+              หัวหน้าฝ่ายบริหารรับเรื้่อง
+            </p>
             <div className=" flex justify-start mt-3">
               <button
                 type="button"
                 class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200  focus:z-10 focus:ring-4 focus:ring-gray-200  "
               >
                 สถานะ :{" "}
-                <span className=" text-yellow-600">ยังไม่ได้ส่งอีเมล</span>
+                <span className=" text-yellow-600">ยังไม่ได้ดำเนินการ</span>
               </button>
             </div>
           </div>
@@ -92,14 +94,14 @@ export default function ScanPage() {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
               Step 4
             </h5>
-            <p className="font-normal text-gray-700">ส่งเอกสารกลับให้คุณ</p>
+            <p className="font-normal text-gray-700">เอกสารสำเร็จ</p>
             <div className=" flex justify-start mt-3">
               <button
                 type="button"
                 class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200  focus:z-10 focus:ring-4 focus:ring-gray-200  "
               >
                 สถานะ :{" "}
-                <span className=" text-yellow-600">ยังไม่ได้รับอีเมล</span>
+                <span className=" text-yellow-600">ยังไม่ได้ดำเนินการ</span>
               </button>
             </div>
           </div>

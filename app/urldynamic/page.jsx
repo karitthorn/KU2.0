@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 export default function App() {
   const [url, setUrl] = useState(
-    "https://verify.ink/assets/documents/electronic_records_and_signatures_in_commerce.pdf"
+    ""
   );
   const router = useRouter();
 // ตัวอย่างการส่ง

@@ -31,36 +31,35 @@ export default function FormInfoPage() {
       setFileBase(e.target.files[0]);
     }
   };
-  const handleFileInputChange2 = (file) => {
-    setFileBase642(file.base64);
+  const handleFileInputChange2 = (e) => {
+    if (e.target.files) {
+      setFileBase2(e.target.files[0]);
+    }
   };
 
   const handleDropdownChange = (e) => {
     setSelectedOption(e.target.value);
   };
 
-//ส่ง extension ไปใน database
+  //ส่ง extension ไปใน database
   async function postData() {
-    if (fileBase) {
-      const formdata = new FormData();
-      formdata.append("file", file);
-      // const result = await fetch(``)
-    }
     try {
+      const formdata1 = new FormData();
+      formdata1.append("file", fileBase);
+      const formdata2 = new FormData();
+      formdata2.append("file", fileBase2);
+      const formData = new FormData();
+      formData.append("logo", formdata1.get("file"));
+      formData.append("image", formdata2.get("file"));
+      formData.append("name", name);
+      formData.append("creator", code);
+      formData.append("url", url);
+
       const response = await fetch(
-        `https://api-c3vk.onrender.com/post_extension`,
+        `https://api-c3vk.onrender.com/post_extension2`,
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            image: fileBase64,
-            name: name,
-            creator: code,
-            url: url,
-            logo: fileBase64,
-          }),
+          body: formData,
         }
       );
       if (!response.ok) {
@@ -97,7 +96,7 @@ export default function FormInfoPage() {
               </div>
             </div>
             <div className="mb-6">
-              <label className="mb-2">ภาพ 358x166</label>
+              <label className="mb-2">ฺBanner 358x166</label>
               <div>
                 <input type="file" onChange={handleFileInputChange2} />
               </div>
@@ -144,9 +143,9 @@ export default function FormInfoPage() {
                 ชื่อผู้จัดทำ
               </label>
               <input
-                type="number"
+                type="text"
                 id="code"
-                placeholder="66xxxxxxx"
+                placeholder="นายตัวอย่าง"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 required
                 value={code}
